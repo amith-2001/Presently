@@ -3,14 +3,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-input = {
-    "prompt": "write a code to create a snake game using python",
-    "temperature": 0.2
-}
+def snowflake_rec(recomendation_query) -> str:
+    input = {"prompt": recomendation_query,
+            "temperature": 0.2}
 
-for event in replicate.stream(
-    "snowflake/snowflake-arctic-instruct",
-    input=input
-):
-    print(event, end="")
-#=> "Fizz Buzz is a common programming problem that involves ...
+    output = replicate.run("snowflake/snowflake-arctic-instruct",
+                            input=input)
+    return "".join(output)
+
+if __name__ == '__main__':
+    print(snowflake_rec("what is ai?"))
