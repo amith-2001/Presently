@@ -50,8 +50,10 @@ def choose_template_page():
 
 
 
+
+
 def template2():
-   
+    
 
     # Initialize session state to store the data
     if 'title_text' not in st.session_state:
@@ -72,32 +74,27 @@ def template2():
     # Sidebar for inputs
     with st.sidebar:
         st.header("Controls")
-        input_title = st.text_input("Enter Title Text", "")
-        input_left_content = st.text_area("Enter Left Content Text", "")
-        input_right_content = st.text_area("Enter Right Content Text", "")
+        # The text_input and text_area widgets automatically update the session state when text is entered
+        st.session_state.title_text = st.text_input("Enter Title Text", st.session_state.title_text)
+        st.session_state.left_content_text = st.text_area("Enter Left Content Text", st.session_state.left_content_text)
+        st.session_state.right_content_text = st.text_area("Enter Right Content Text", st.session_state.right_content_text)
         
         uploaded_left_file = st.file_uploader("Upload Left Image", type=['png', 'jpg', 'jpeg'], key="left")
         uploaded_right_file = st.file_uploader("Upload Right Image", type=['png', 'jpg', 'jpeg'], key="right")
         
-        if st.button("Update Title"):
-            st.session_state.title_text = input_title
-
-        if st.button("Update Left Content"):
-            st.session_state.left_content_text = input_left_content
-
-        if st.button("Update Right Content"):
-            st.session_state.right_content_text = input_right_content
-
         if uploaded_left_file:
             st.session_state.left_image_data = Image.open(uploaded_left_file)
 
         if uploaded_right_file:
             st.session_state.right_image_data = Image.open(uploaded_right_file)
 
+        # Button to create a new slide
         if st.button("New Slide"):
-            choose_template_page()  
-
-         
+            st.session_state.title_text = "Click to add title"
+            st.session_state.left_content_text = "Click to add text on left"
+            st.session_state.right_content_text = "Click to add text on right"
+            st.session_state.left_image_data = None
+            st.session_state.right_image_data = None
 
     # Main presentation area
     st.title(st.session_state.title_text)
@@ -113,6 +110,8 @@ def template2():
         st.write(st.session_state.right_content_text)
         if st.session_state.right_image_data:
             st.image(st.session_state.right_image_data, caption='Uploaded Right Image', use_column_width=True)
+
+
 
 
 
