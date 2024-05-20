@@ -16,7 +16,7 @@ def get_image_base64(image):
     else:
         return None
 
-def main():
+def render_template_1():
     st.title("Dynamic Content Updater")
 
     # Sidebar inputs
@@ -48,4 +48,4 @@ def main():
         """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
-    main()
+    render_template_1()
