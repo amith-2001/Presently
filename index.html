@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Line Chart with ECharts</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body>
+  <div id="chart" style="width: 600px; height: 400px;"></div>
+
+  <script>
+    var option = {
+      // Your line chart configuration goes here (copy from previous code)
+      xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          data: [120, 200, 150, 80, 160],
+          type: 'line'
+        }
+      ]
+    };
+
+    var chart = echarts.init(document.getElementById('chart'));
+
+    chart.setOption(option);
+  </script>
+</body>
+</html>
