@@ -1,31 +1,19 @@
 import streamlit as st
 import streamlit.components.v1 as components
-import pandas as pd
-import json
-
-# Sample DataFrame
-data = {
-    "product": ["shirt", "cardigan", "chiffon shirt", "pants", "heels", "socks"],
-    "sales": [5, 20, 36, 10, 10, 20]
-}
-df = pd.DataFrame(data)
 
 def render_echarts():
-    # option_json = json.dumps(option)
-
     html_template = """
     <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECharts Line Graph</title>
+    <title>ECharts Scatter Plot</title>
     <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 </head>
 <body>
-    <div id="main" style="width: 600px;height:400px;"></div>
+    <div id="main" style="width: 100%;height:100vh;"></div>
     <script type="text/javascript">
-    // Insert the provided JavaScript code here
     const data = [
       [
         [28604, 77, 17096869, 'Australia', 1990],
@@ -122,7 +110,7 @@ def render_echarts():
             label: {
               show: true,
               formatter: function (param) {
-                return param.data[3];
+                return param.data[3] + '\\n' + param.data[0] + ' $, ' + param.data[1] + ' years';
               },
               position: 'top'
             }
@@ -149,7 +137,7 @@ def render_echarts():
             label: {
               show: true,
               formatter: function (param) {
-                return param.data[3];
+                return param.data[3] + '\\n' + param.data[0] + ' $, ' + param.data[1] + ' years';
               },
               position: 'top'
             }
@@ -167,28 +155,12 @@ def render_echarts():
       ]
     };
 
-    // Use this configuration to initialize the chart with echarts.init and setOption methods.
     const chart = echarts.init(document.getElementById('main'));
     chart.setOption(option);
-  </script>
+    </script>
 </body>
 </html>
 """
     components.html(html_template, width=700, height=500)
 
-# # Prepare ECharts options using DataFrame
-# option = {
-#     "title": {"text": "ECharts Sales Example"},
-#     "tooltip": {},
-#     "legend": {"data": ["Sales"]},
-#     "xAxis": {"data": df["product"].tolist()},
-#     "yAxis": {},
-#     "series": [{
-#         "name": "Sales",
-#         "type": "bar",
-#         "data": df["sales"].tolist()
-#     }]
-# }
-
-# Call the function with the options
 render_echarts()
