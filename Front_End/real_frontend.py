@@ -332,7 +332,7 @@ if __name__ == '__main__':
         lottie_animation = load_lottiefile(lottie_animation_path)
         st_lottie(lottie_animation, height=250, width=600, key="example")
         live_typing_effect(
-            "Hello, I'm your AI Flowchart Generator! 🚀 Just send over your code or GitHub repository, and I'll transform it into a sleek, easy-to-understand flow diagram. Let's streamline your work and make your projects visually engaging!",
+            "Hello, I'm Plotly, your Interactive Presentation Creator! 🌟 Simply provide your data, and I'll help you transform it into stunning, interactive visualizations using Echarts. Let's enhance your presentations and make your data come alive! Ready to visualize your success? Let's get started!",
             speed=25)
         col1, col2 = st.columns(2)
 
