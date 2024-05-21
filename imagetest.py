@@ -26,17 +26,17 @@ save_image_to_json(image_base64, json_path)
 print(f"Image saved to {json_path} as base64 string.")
 
 
-def load_image_from_json(json_path, output_image_path):
-    """Load a base64 encoded string from a JSON file and decode it to an image."""
-    with open(json_path, 'r') as json_file:
-        data = json.load(json_file)
-    image_base64 = data['image']
-    image_data = base64.b64decode(image_base64)
-    with open(output_image_path, 'wb') as image_file:
-        image_file.write(image_data)
+# def load_image_from_json(json_path, output_image_path):
+#     """Load a base64 encoded string from a JSON file and decode it to an image."""
+#     with open(json_path, 'r') as json_file:
+#         data = json.load(json_file)
+#     image_base64 = data['image']
+#     image_data = base64.b64decode(image_base64)
+#     with open(output_image_path, 'wb') as image_file:
+#         image_file.write(image_data)
 
-# Example usage:
-output_image_path = 'output_image.jpg'
-load_image_from_json(json_path, output_image_path)
+# # Example usage:
+# output_image_path = 'output_image.jpg'
+# load_image_from_json(json_path, output_image_path)
 
-print(f"Image loaded from {json_path} and saved to {output_image_path}.")
+# print(f"Image loaded from {json_path} and saved to {output_image_path}.")
