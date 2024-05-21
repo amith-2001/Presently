@@ -1,10 +1,4 @@
-import streamlit as st
-import streamlit.components.v1 as components
-
-st.set_page_config(layout="wide")
-def render_echarts():
-    html_template = """
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +9,7 @@ def render_echarts():
 </head>
 <body>
     <!-- Container for your chart -->
-    <div id="main" style="width: 1500px; height: 500px;"></div>
+    <div id="main" style="width: 800px; height: 600px;"></div>
 
     <script>
         // Your ECharts configuration
@@ -182,13 +176,3 @@ def render_echarts():
     </script>
 </body>
 </html>
-
-"""
-    components.html(html_template, width=1000, height=500)
-
-
-st.title("kjfhdskjfh")
-st.divider()
-st.divider()
-
-render_echarts()
