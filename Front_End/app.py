@@ -108,6 +108,7 @@ def graph_plotter_with_chat(user_graph_text):
     user_message = st.sidebar.text_input("Say something...", key="chat")
     if user_message:
         st.sidebar.write("AI: Hi")
+
 def render_template_1():
     # st.title("Dynamic Content Updater")
 
