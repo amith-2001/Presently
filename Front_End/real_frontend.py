@@ -328,7 +328,7 @@ if __name__ == '__main__':
     if st.session_state['page'] == 'home':
         st.title(
             "Welcome! Let's generate Interactive Viz from your data! 🚀")
-        lottie_animation_path = "Animation - 1716175109588.json"
+        lottie_animation_path = "/Animation - 1716175109588.json"
         lottie_animation = load_lottiefile(lottie_animation_path)
         st_lottie(lottie_animation, height=250, width=600, key="example")
         live_typing_effect(
