@@ -5,8 +5,8 @@ import json
 client = MongoClient('mongodb+srv://maxwelljohn123123:nRJWqRQxvjH4bnYu@stremlit-snowflake-hack.ul6jfec.mongodb.net/?retryWrites=true&w=majority&appName=Stremlit-Snowflake-hackathon')  # Replace with your MongoDB URI if different
 
 # Select the database and collection
-db = client['Streamlit-Snowflake']
-collection = db['presentation-data']
+db = client['ga']
+collection = db['ma']
 
 # Your JSON data
 json_data = {

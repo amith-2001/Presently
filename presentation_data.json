@@ -12,5 +12,18 @@
             "left_content": "wedcdecd",
             "right_content": "dvdcvd"
         }
+    },
+    {
+        "Slide 2": {
+            "title": "ssssssssssssssssssssssssssssss",
+            "left_content_type": "image",
+            "left_content": null,
+            "left_image_path": "uploaded_images\\left_slide_2.png",
+            "left_graph_data": null,
+            "right_content_type": "image",
+            "right_content": null,
+            "right_image_path": "uploaded_images\\right_slide_2.png",
+            "right_graph_data": null
+        }
     }
 ]

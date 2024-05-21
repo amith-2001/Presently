@@ -89,6 +89,7 @@ def template2():
             # Read existing data or initialize empty list
             if os.path.exists("presentation_data.json"):
                 try:
+                    # add_data()
                     with open("presentation_data.json", "r") as file:
                         slides_data = json.load(file)
                 except json.JSONDecodeError:
